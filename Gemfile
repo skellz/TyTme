@@ -32,11 +32,17 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'devise'
+gem 'simple_form'
+gem 'foundation-rails'
+
 group :test do 
   gem 'launchy'
+  gem 'email_spec'
 end
 
 group :test, :development do
+  gem 'better_errors'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'valid_attribute'

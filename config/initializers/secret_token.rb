@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-TyTme::Application.config.secret_key_base = '78ee683d884c3592f0430e201e9e8deedf63ec3712976ebca34bcc14f530f2b5dc5cdceca1616a386a71896ce6984c67766580417c31765519da0c66f02b4701'
+TyTme::Application.config.secret_key_base = ENV['SECRET_KEY']

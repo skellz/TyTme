@@ -16,24 +16,28 @@ feature 'charity successfully signs up', %q{
 
   scenario 'charity registers successfully' do 
     visit root_path
+    click_link 'Charitable Orginizations'
     click_link 'Charity Sign Up'
 
-    expect(page).to have_content('Charity Sign Up')
+    expect(page).to have_content('New Charity Sign Up')
 
     fill_in 'Orginization Name', with: 'Liberty'
     fill_in 'Email', with: 'help@liberti.org'
     fill_in 'Address', with: '123 Main St'
     fill_in 'Zip Code', with: '11221'
-    select("NY", from: :states)
-    select("United States", from: :countries)
+    select("NY", from: 'State')
+    select("United States", from: 'Country')
+    fill_in('Password', with: 'password', match: :prefer_exact)
+    fill_in 'Password Confirmation', with: 'password'
     click_button 'Charity Sign Up'
-
-    expect(page).to have_content("Welcome! You have successfully signed up")
+    
     expect(page).to have_content('Sign Out')
+    expect(page).to have_content("Welcome! You have successfully signed up")
   end
 
   scenario 'charity tries to register unsuccessfully' do 
     visit root_path
+    click_link 'Charitable Orginizations'
     click_link 'Charity Sign Up'
 
     click_button 'Charity Sign Up'

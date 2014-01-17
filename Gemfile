@@ -35,6 +35,7 @@ end
 gem 'devise'
 gem 'simple_form'
 gem 'foundation-rails'
+gem 'binding_of_caller'
 
 group :test do 
   gem 'launchy'
@@ -42,6 +43,7 @@ group :test do
 end
 
 group :test, :development do
+  gem 'countries'
   gem 'better_errors'
   gem 'rspec-rails'
   gem 'factory_girl_rails'

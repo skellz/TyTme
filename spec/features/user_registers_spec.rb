@@ -24,7 +24,7 @@ feature 'new user signs up', %q{
     click_button 'Sign Up'
 
     expect(page).to have_content('Welcome! You have successfully signed up!')
-    expect(page).to have have_content('Sign Out')
+    expect(page).to have_content('Sign Out')
     expect(page).to_not have_content('Sign In')
   end
 

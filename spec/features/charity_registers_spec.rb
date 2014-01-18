@@ -30,7 +30,8 @@ feature 'charity successfully signs up', %q{
     fill_in 'Password Confirmation', with: 'password'
     click_button 'Charity Sign Up'
     
-    expect(page).to have_content('Sign Out')
+    expect(p
+      age).to have_content('Sign Out')
     expect(page).to have_content("Welcome! You have signed up successfully.")
   end
 

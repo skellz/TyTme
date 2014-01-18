@@ -12,7 +12,7 @@ feature 'new user signs up', %q{
 
   scenario 'user registers with valid attributes' do
     visit root_path
-    click_link 'User Sign Up'
+    click_link 'User'
 
     expect(page).to have_content('Sign Up')
 
@@ -24,8 +24,17 @@ feature 'new user signs up', %q{
     click_button 'Sign Up'
 
     expect(page).to have_content('Welcome! You have successfully signed up!')
-    expect(page).to have have_content('Sign Out')
+    expect(page).to have_content('Sign Out')
     expect(page).to_not have_content('Sign In')
   end
 
+  scenario 'user registers with invalid attributes' do
+    visit root_path
+    click_link 'User'
+    click_button 'Sign Up'
+
+    expect(page).to have_content("can't be blank")
+    expect(page).to_not have_content('Sign Out')
+    expect(page).to_not have_content('Welcome! You have successfully signed up!')
+  end
 end

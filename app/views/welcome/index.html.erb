@@ -1,0 +1,11 @@
+<p id="notice">
+  <%= notice %>
+  <%= link_to 'User Sign Up', new_user_registration_path unless user_signed_in? || charity_signed_in? %>
+
+  <% if charity_signed_in? %>
+    <%= link_to 'Sign Out', destroy_charity_session_path, method: :delete %>
+  <% else %>
+    <%= link_to 'Charitable Orginizations', new_charity_registration_path %>
+
+  <% end %>
+</p>

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Charity do
-  it { should have_many(:users) }
+  it { should have_and_belong_to_many(:users) }
   it { should have_many(:items).through(:wishlist) }
 
   it { should have_valid(:name).when('Charity Org', 'Charity', 'Good4u') }

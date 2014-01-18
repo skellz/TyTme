@@ -12,20 +12,22 @@ feature 'charity signs in' do
 
   scenario 'charity signs in with valid attributes' do 
     visit root_path
-    click_link 'Charity'
+    click_link 'Charitable Orginizations'
+    click_link 'Sign In'
     fill_in 'Email', with: charity.email
     fill_in 'Password', with: charity.password
-    click_button 'Charity Sign In'
+    click_button 'Sign In'
 
-    expect(page).to have_content(charity.name)
-    expect(page).to have_content('Successfully signed in')
+    expect(page).to have_content('Signed in successfully.')
   end
 
   scenario 'charity attempts to sign in with invalid attributes' do 
     visit root_path
-    click_link 'Charity'
-    click_button 'Charity Sign In'
+    click_link 'Charitable Orginizations'
+    click_link 'Sign In'
+    click_button 'Sign In'
 
-    expect(page).to have_content("Invalid email or password")
+    expect(page).to_not have_content("Sign Out")
+    expect(page).to_not have_content("Signed in successfully")
   end
 end

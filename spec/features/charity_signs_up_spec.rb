@@ -17,8 +17,7 @@ feature 'charity successfully signs up', %q{
   scenario 'charity registers successfully' do 
     visit root_path
     click_link 'Charitable Orginizations'
-    click_link 'Charity Sign Up'
-
+  
     expect(page).to have_content('New Charity Sign Up')
 
     fill_in 'Orginization Name', with: 'Liberty'
@@ -38,7 +37,6 @@ feature 'charity successfully signs up', %q{
   scenario 'charity tries to register unsuccessfully' do 
     visit root_path
     click_link 'Charitable Orginizations'
-    click_link 'Charity Sign Up'
 
     click_button 'Charity Sign Up'
     expect(page).to have_content("can't be blank")

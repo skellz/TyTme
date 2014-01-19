@@ -9,7 +9,7 @@ feature 'new user signs up', %q{
   # * I must specify my First Name
   # * I must specify my Last Name
   # * I must specify my email address 
-
+  
   scenario 'user registers with valid attributes' do
     visit root_path
     click_link 'User'

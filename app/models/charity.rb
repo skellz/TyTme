@@ -8,7 +8,6 @@ class Charity < ActiveRecord::Base
   has_one :wishlist
   has_many :items, through: :wishlist
   
-  validates_uniqueness_of :email
   validates_presence_of :city
   validates_presence_of :name
   validates_uniqueness_of :name

@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'pry'
 
 describe Charity do
   it { should have_and_belong_to_many(:users) }
@@ -25,10 +26,10 @@ describe Charity do
 
   it { should have_valid(:country).when('United States') }
   it { should_not have_valid(:country).when(nil, '') }
-  
+
   describe 'uniqueness validations' do 
     before(:each) do 
-      FactoryGirl.create(:charity)
+      FactoryGirl.build(:charity)
     end
       it { should validate_uniqueness_of :email }
       it { should validate_uniqueness_of :name }

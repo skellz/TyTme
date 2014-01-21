@@ -1,0 +1,6 @@
+<h2>New Charity Sign Up</h2>
+<% if charity_signed_in? == false %>
+  <%= render 'charity_form' %>
+<% end %>
+
+<%= render "charities/shared/links" %>

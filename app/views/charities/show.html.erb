@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<% if charity_signed_in? && current_charity.id == @charity.id %>
+  <%= link_to 'Edit Info', edit_charity_registration_path %>
+<% end %>
+
+<p>
+  <strong>Email Address:</strong>
+  <%= @charity.email %>
+</p>
+
+<p>
+  <strong>Charity Name:</strong>
+  <%= @charity.name %>
+</p>
+
+<p>
+  <strong>Address:</strong><br>
+  <%= @charity.address %><br>
+  <%= @charity.city %>, <%= @charity.state %> <%= @charity.zip_code %>
+</p>
+
+<%= link_to 'Back', charities_path %>

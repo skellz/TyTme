@@ -1,0 +1,18 @@
+<p id="notice">
+  <%= notice %>
+  <p>
+    <% @charities.each do |charity| %>
+      <%= charity.name %><br>
+    <% end %>
+  </p>
+
+  <% if charity_signed_in? %>
+    <%= link_to 'Sign Out', destroy_charity_session_path, method: :delete %>
+  <% elsif user_signed_in? %>
+    <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to 'User', new_user_registration_path %><br>
+    <%= link_to 'Charitable Orginizations', new_charity_registration_path %>
+
+  <% end %>
+</p>

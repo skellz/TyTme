@@ -1,0 +1,16 @@
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+
+    <%=f.input :name, label: 'Orginization Name' %>
+    <%=f.input :email %>
+    <%=f.input :address %>
+    <%=f.input :city %>
+    <%=f.input :state, collection: Country['US'].states.keys %>
+    <%=f.input :zip_code, label: 'Zip Code' %>
+    <%=f.input :country, collection: ['United States'] %>
+    <%=f.input :phone_number %>
+    <%=f.input :fax_number %>
+    <%=f.input :password %>
+    <%=f.input :password_confirmation, label: 'Password Confirmation' %>
+    <%= f.button :submit, 'Charity Sign Up' %>
+  <% end %>

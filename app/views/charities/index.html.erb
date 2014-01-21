@@ -1,0 +1,6 @@
+<p>
+  <% @charities.each do |charity| %>
+    <%= link_to "#{charity.name}", "charities/#{charity.id}" %><br>
+  <% end %>
+</p>
+<%= render "charities/shared/links" %>

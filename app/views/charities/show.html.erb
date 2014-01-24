@@ -2,6 +2,9 @@
 <% if charity_signed_in? && current_charity.id == @charity.id %>
   <%= link_to 'Edit Info', edit_charity_registration_path %>
 <% end %>
+<div>
+  <img src=<% @charity.charity_photo %>>
+</div>
 
 <p>
   <strong>Email Address:</strong>

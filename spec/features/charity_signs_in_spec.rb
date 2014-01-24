@@ -8,7 +8,7 @@ feature 'charity signs in' do
   # * I have a password
   # * I get redirected to my charity home page
 
-  let(:charity) { FactoryGirl.create(:charity) }
+  let(:charity) { FactoryGirl.build(:charity) }
 
   scenario 'charity signs in with valid attributes' do 
     visit root_path

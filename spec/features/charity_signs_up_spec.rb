@@ -21,8 +21,9 @@ feature 'charity successfully signs up', %q{
     expect(page).to have_content('New Charity Sign Up')
 
     fill_in 'Orginization Name', with: 'Liberty'
-    fill_in 'Email', with: 'help@liberti.org'
+    fill_in 'Email', with: 'help@libertiy.org'
     fill_in 'Address', with: '123 Main St'
+    fill_in 'City', with: 'Brooklyn'
     fill_in 'Zip Code', with: '11221'
     select("NY", from: 'State')
     select("United States", from: 'Country')

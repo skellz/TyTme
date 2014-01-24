@@ -14,29 +14,54 @@
 
 
   <body>
-    <nav class="top-bar">
-      <ul class="title-area">
-        <li class="name"><h1><%= link_to 'TyTme', root_path %></h1></li>
-        <li class="toggle-topbar"></li>
-      </ul>
-      <section class="top-bar-section">
-        <ul class="right">
-          <li><%= link_to 'Charities', charities_path %></li>
-        </ul>
 
-        <ul class="right">
-          <li>
+    <div class="row">
+    <div class="large-3 columns">
+      <h1><%= link_to 'TyTme', root_path %></h1>
+    </div>
+    <div class="large-9 columns">
+      <ul class="right button-group">
+        <li>
           <% if user_signed_in? %>
-            <%= link_to 'User Account', edit_user_registration_path %>
+            <a href="/users/edit" class="button">My Account</a>
           <% else %>
-            <%= link_to 'User Sign In', user_session_path %>
+            <a href="/users/sign_in" class="button">User Sign In</a>
           <% end %>
-          </li>
-        </ul>
-      </section>
-    </nav>
+        </li>
+        <li><a href="/charities" class="button">Charities</a></li>
+      </ul>
+    </div>
+  </div>
+  
 
     <%= yield %>
+<footer class="row">
+    <div class="large-12 columns">
+      <hr />
+      <div class="row">
+        <div class="large-6 columns">
+          <p>© Copyright TyTme.</p>
+        </div>
+        <div class="large-6 columns">
+          <ul class="inline-list right">
+            <li>
+            <% if charity_signed_in? %>
+              <%= link_to 'Sign Out', destroy_charity_session_path, method: :delete %>
+            <% elsif user_signed_in? %>
+              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+            <% else %>
+              <%= link_to 'User', new_user_registration_path %>
+            </li>
+            <li>
+              <%= link_to 'Charitable Orginizations', new_charity_registration_path %>
+            </li>
+            <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+  </footer>
     <%= javascript_include_tag "application" %>
   </body>
 </html>

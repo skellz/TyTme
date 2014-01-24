@@ -18,7 +18,7 @@ feature 'new user signs up', %q{
 
     fill_in 'First Name', with:'Joe'
     fill_in 'Last Name', with: 'Smith'
-    fill_in 'Email', with: 'test@example.com'
+    fill_in 'Email', with: 'test12@example.com'
     fill_in('Password', with: 'password', match: :prefer_exact)
     fill_in 'Password Confirmation', with: 'password'
     click_button 'Sign Up'

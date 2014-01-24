@@ -3,4 +3,11 @@
     <%= link_to "#{charity.name}", "charities/#{charity.id}" %><br>
   <% end %>
 </p>
-<%= render "charities/shared/links" %>
+<% if user_signed_in? %>
+  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+<% elsif charity_signed_in? %>
+  <%= link_to 'Sign Out', destroy_charity_session_path, method: :delete %>
+<% else %>
+  <%= link_to 'Sign In', charity_session_path %>
+  <%= link_to 'Sign Up', new_charity_registration_path %>
+<% end %>

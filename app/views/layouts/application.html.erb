@@ -7,6 +7,58 @@
     <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="We help users purchase items directly for Charities">
+    <meta property="fb:admins" content="599116829">
+    <meta property="fb:app_id" content="478672838853994">
+    <meta property="twitter:account_id" content="19738648"> 
+    
+    
+    <meta property="og:title" content="TyTme">
+    <meta property="og:site_name" content="Ty+Tme">
+    <meta property="og:url" content="http://www.teehanlax.com/">
+    <meta property="og:image" content="http://www.teehanlax.com/resources/img/favicons/open-graph-default.png">
+
+      
+    <title>TyTme - Today you Tomorrow Me</title>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="http://com.teehanlax.assets.s3-website-us-east-1.amazonaws.com/resources/img/favicons/favicon.ico">
+    <link rel="shortcut icon" type="image/ico" href="http://com.teehanlax.assets.s3-website-us-east-1.amazonaws.com/resources/img/favicons/favicon.ico">
+
+    <link rel="apple-touch-icon-precomposed" href="http://com.teehanlax.assets.s3-website-us-east-1.amazonaws.com/resources/img/favicons/apple-touch-icon-precomposed-57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://com.teehanlax.assets.s3-website-us-east-1.amazonaws.com/resources/img/favicons/apple-touch-icon-precomposed-72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://com.teehanlax.assets.s3-website-us-east-1.amazonaws.com/resources/img/favicons/apple-touch-icon-precomposed-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://com.teehanlax.assets.s3-website-us-east-1.amazonaws.com/resources/img/favicons/apple-touch-icon-precomposed-144.png">
+    
+    <link rel="stylesheet" href="http://com.teehanlax.assets.s3-website-us-east-1.amazonaws.com/prod/css/main.css?v=1.0.6" media="all">
+    <script src="http://com.teehanlax.assets.s3-website-us-east-1.amazonaws.com/prod/js/main.js?v=1.0.6"></script>
+
+    <script>
+      // Typekit 
+      (function() {
+        var config = {
+        kitId: 'dnc4oik',
+        scriptTimeout: 3000
+      };
+      var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+      })();
+
+      /*
+      * google analytics 
+      */
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-68930-1']);
+      _gaq.push(['_setSiteSpeedSampleRate', 100]);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
@@ -14,8 +66,106 @@
 
 
   <body>
+  <nav id="main-nav" class="tl-site off-screen">
+    <div class="site-width track-event" data-category="home" data-action="click" data-label="menu bar">
+      <a href="/"><span>TyTme</span></a>
+      <span class="hamburger icon" data-icon="C"><span>Menu</span></span>
+      <div class="menu">Menu</div>
+    </div>
+  </nav>
+<nav id="main-nav-drop" class="tl-site">
+  <div class="site-width">
+    <div class="contents">
+      <ul class="sections">
+        <li>
+          <a href="/about/" class="track-event" data-short="About" data-category="menu bar" data-action="click" data-label="what we do">
+            <span>Why We Exist</span>
+          </a>
+        </li>
+        <li>
+          <% if user_signed_in? %>
+            <a href="/users/edit" class="track-event" data-short="Jobs" data-category="menu bar" data-action="click" data-label="careers"><span>My Account</span></a>
+          <% else %>
+            <a href="/users/sign_in" class="track-event" data-short="Jobs" data-category="menu bar" data-action="click" data-label="careers"><span>User Sign In</span></a>
+          <% end %>
+        </li>
+        <li>
+          <a href="/charities" class="track-event" data-short="Jobs" data-category="menu bar" data-action="click" data-label="careers"><span>Charities</span></a></li>
+          </a>
+        </li>
+        <li>
+          <a href="/contact/" class="track-event" data-short="Contact" data-category="menu bar" data-action="click" data-label="contact us">
+            <span>Contact Us</span>
+          </a>
+        </li>
+      </ul>
 
-    <div class="row">
+      <div class="group-title"><h6>Charities We Support</h6></div>
+      
+      <div class="stories">
+        <div class="nav-item">
+          <h6> Fight Hunger and Feed Hope</h6>
+          <h1><a href="http://www.midwestfoodbank.org/home" data-bg="social-portrait">Midwest Food Bank</a></h1>
+        </div>
+
+        <div class="nav-item">
+          <h6>Provide Medical Supplies to the World</h6>
+          <h1><a href="http://www.projectcure.org/" data-bg="medium">Project C.U.R.E.</a></h1>
+        </div>          
+        
+        <div class="nav-item">
+          <h6>Distribute Books to Students in Africa.</h6>
+          <h1><a href="http://www.booksforafrica.org/" data-bg="globe">Books For Africa</a></h1>
+        </div>
+        
+        <div class="nav-item">
+          <h6>Scholarships for Florida Schoolchildren</h6>
+          <h1><a href="https://www.stepupforstudents.org/" data-bg="readability">Step Up For Students</a></h1>
+        </div>
+        
+        <div class="nav-item">
+          <h6>Provides Medical Assitance Around the World</h6>
+          <h1><a href="http://www.directrelief.org/" data-bg="stackup">Direct Relief</a></h1>
+        </div>
+        
+      </div>
+
+    </div>
+  </div>
+</nav>  
+  <div id="page-container">
+    
+<div id="homepage" class="page-content">
+  
+  <div class="about-tl card">
+  <div class="site-width">
+    
+    <div class="vert-center copy">
+    
+    </div>
+  </div>
+</div>  
+  <div class="tagline">
+  
+    <div class="site-width">
+    
+            
+        <p id="latest-post-title">
+          <span></span>
+          <a href="#" class="track-event" data-category="home" data-action="click" data-label="learn more"></a>
+        </p>
+            
+    </div>
+    
+  </div>
+  
+</div>
+
+  </div>
+
+
+
+    <!-- <div class="row">
     <div class="large-3 columns">
       <h1><%= link_to 'TyTme', root_path %></h1>
     </div>
@@ -31,11 +181,11 @@
         <li><a href="/charities" class="button">Charities</a></li>
       </ul>
     </div>
-  </div>
+  </div> -->
   
 
     <%= yield %>
-<footer class="row">
+<!-- <footer class="row">
     <div class="large-12 columns">
       <hr />
       <div class="row">
@@ -62,6 +212,6 @@
       </div>
     </div> 
   </footer>
-    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "application" %> -->
   </body>
 </html>

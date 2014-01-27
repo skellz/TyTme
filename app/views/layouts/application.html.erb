@@ -7,18 +7,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="description" content="We help users purchase items directly for Charities">
-    <meta property="fb:admins" content="599116829">
-    <meta property="fb:app_id" content="478672838853994">
-    <meta property="twitter:account_id" content="19738648"> 
     
-    
-    <meta property="og:title" content="TyTme">
-    <meta property="og:site_name" content="Ty+Tme">
-    <meta property="og:url" content="http://www.teehanlax.com/">
-    <meta property="og:image" content="http://www.teehanlax.com/resources/img/favicons/open-graph-default.png">
 
       
     <title>TyTme - Today you Tomorrow Me</title>
@@ -60,15 +49,15 @@
     </script>
 
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= csrf_meta_tags %>
+    
   </head>
 
 
-  <body>
+  <body class="tl-site">
+  
   <nav id="main-nav" class="tl-site off-screen">
     <div class="site-width track-event" data-category="home" data-action="click" data-label="menu bar">
-      <a href="/"><span>TyTme</span></a>
+      <a href="/" data-icon="B"><span>TyTme</span></a>
       <span class="hamburger icon" data-icon="C"><span>Menu</span></span>
       <div class="menu">Menu</div>
     </div>
@@ -133,61 +122,17 @@
     </div>
   </div>
 </nav>  
-  <div id="page-container">
-    
-<div id="homepage" class="page-content">
-  
-  <div class="about-tl card">
-  <div class="site-width">
-    
-    <div class="vert-center copy">
-    
+<div id="page-container">
+  <div id="homepage" class="page-content">
+    <div class="site-width"> 
+      <div class="vert-center copy">
+        <%= yield %>
+      </div>
     </div>
-  </div>
-</div>  
-  <div class="tagline">
-  
-    <div class="site-width">
-    
-            
-        <p id="latest-post-title">
-          <span></span>
-          <a href="#" class="track-event" data-category="home" data-action="click" data-label="learn more"></a>
-        </p>
-            
-    </div>
-    
-  </div>
-  
-</div>
 
-  </div>
-
-
-
-    <!-- <div class="row">
-    <div class="large-3 columns">
-      <h1><%= link_to 'TyTme', root_path %></h1>
-    </div>
-    <div class="large-9 columns">
-      <ul class="right button-group">
-        <li>
-          <% if user_signed_in? %>
-            <a href="/users/edit" class="button">My Account</a>
-          <% else %>
-            <a href="/users/sign_in" class="button">User Sign In</a>
-          <% end %>
-        </li>
-        <li><a href="/charities" class="button">Charities</a></li>
-      </ul>
-    </div>
-  </div> -->
-  
-
-    <%= yield %>
-<!-- <footer class="row">
+  <footer class="row">
     <div class="large-12 columns">
-      <hr />
+      <hr>
       <div class="row">
         <div class="large-6 columns">
           <p>© Copyright TyTme.</p>
@@ -212,6 +157,9 @@
       </div>
     </div> 
   </footer>
-    <%= javascript_include_tag "application" %> -->
-  </body>
+    </div>
+  </div>
+</div>  
+
+</body>
 </html>

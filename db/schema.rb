@@ -51,7 +51,6 @@ ActiveRecord::Schema.define(version: 20140124073123) do
   create_table "items", force: true do |t|
     t.string   "name"
     t.decimal  "price"
-    t.integer  "wish_list_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -77,7 +76,6 @@ ActiveRecord::Schema.define(version: 20140124073123) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "wish_lists", force: true do |t|
-    t.string   "name"
     t.integer  "charity_id"
     t.datetime "created_at"
     t.datetime "updated_at"

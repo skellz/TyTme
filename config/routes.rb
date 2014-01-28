@@ -1,9 +1,11 @@
 TyTme::Application.routes.draw do
   devise_for :users
   devise_for :charities
-  #root :to => "welcome#index"
+  root :to => "welcomes#index"
   resources :charities
-  root to: "tests#index"
+  resources :contacts
+  #match '/about' => "welcomes#about"
+  #root to: "tests#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

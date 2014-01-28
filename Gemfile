@@ -37,6 +37,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'foundation-rails'
 gem 'binding_of_caller'
+gem 'high_voltage'
 
 group :test do 
   gem 'launchy'

@@ -1,0 +1,7 @@
+<%= simple_form_for @contact do |f| %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :subject %>
+  <%= f.input :body, as: :text, label: 'What Can we do to help?' %>
+  <%= f.submit 'Submit Request' %>
+<% end %>
